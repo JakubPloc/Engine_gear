@@ -57,16 +57,14 @@ SceneLoader.ImportMesh("", "public/", "Engine_G.obj", scene, function (
 
 var rychlost = 0.1;
 var gear = MeshBuilder.CreateCylinder("gear", { diameter: 0.00001 });
-SceneLoader.ImportMesh("", "public/", "Gear.obj", scene, function (
-  noveModely
-) {
+SceneLoader.ImportMesh("", "public/", "Gear.obj", scene, function (noveModely) {
   gear = noveModely[0];
-  gear.rotate(new Vector3(1,0,0), Math.PI);
+  gear.rotate(new Vector3(1, 0, 0), Math.PI);
   gear.scaling = new Vector3(1, 1, 1);
 });
 //animace
 scene.registerAfterRender(function () {
-  gear.rotate(Axis.X, rychlost,Space.WORLD);
+  gear.rotate(Axis.X, rychlost, Space.WORLD);
 });
 
 // povinné vykreslování
